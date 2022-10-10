@@ -17,11 +17,12 @@ Ejemplo (Juan - Teléfono)
 vNombres=[]
 vTelefonos=[]
 
-nombre=input("Dime un nombre \n")
-telefono=input("Dime un número \n")
+
+nombre=(str)(input("Dime un nombre \n"))
+telefono=(int)(input("Dime un número \n"))
 
 vNombres.append(nombre)
 vTelefonos.append(telefono)
 
-print(vNombres)
-print(vTelefonos)
+print(vNombres.pop(0), "-", vTelefonos.pop(0))
+
