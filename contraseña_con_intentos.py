@@ -10,5 +10,5 @@ while(intentos <= 2):
     valor=input("Diga la contraseña \n")
     if(codigo == valor ):
        intentos=4
-       print("Constraseña correcta")
+       print("Contraseña correcta")
        
