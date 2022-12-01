@@ -28,7 +28,7 @@ def guardar_datos():
     
     print(vUsuario)
 
-    
+
 ventana = Tk ()
 ventana.title ("Pedir datos")
 ventana.geometry("350x300")
@@ -64,6 +64,12 @@ boton_guardar= ttk.Button(ventana,text="Guardar", command=guardar_datos)
 boton_salir= ttk.Button(ventana, text="Salir", command=ventana.destroy)
 
 
+sexo=ttk.Combobox (ventana,values=["Hombre", "Mujer"], state="readonly")
+sexo.place(x=145,y=160)
+sexo.set("Elige un sexo")
+
+
+
 
 label_titulo.grid(row=0, column=0, pady=10)
 
@@ -76,7 +82,7 @@ entry_contraseña.grid(row=2, column=1, pady=10)
 label_repetirContraseña.grid(row=3, column=0, pady=10,padx=7)
 entry_repetirContraseña.grid(row=3, column=1, pady=10)
 
-boton_guardar.grid(row=4, column=0, pady=20)
-boton_salir.grid(row=4, column=1, pady=20)
+boton_guardar.grid(row=4, column=0, pady=25)
+boton_salir.grid(row=4, column=1, pady=25)
 
 ventana.mainloop()
