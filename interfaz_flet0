@@ -1,0 +1,31 @@
+import flet as ft 
+#se abrevia flet como ft
+
+
+def main(page: ft.Page):
+    page.title= "Aplicación flet"
+
+    def cambiar_color(e):
+        t.color="green"
+        t.size=30
+
+        for i in range (0,10):
+            text= ft.Text(value=f"Texto numero: {i}", size=30)
+            page.add(text)
+
+        page.update()
+
+    #Componente texto
+
+
+    t= ft.Text(value="Introducción a FLet", color="red", size=20)
+    page.add(t) #add añade y actualiza
+
+    t.value="Cambiando los datos"
+    page.update()
+
+    #Componente botón
+
+    bt=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=cambiar_color)
+    page.add(bt)
+ft.app(target=main)
