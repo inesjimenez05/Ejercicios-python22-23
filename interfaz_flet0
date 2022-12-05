@@ -6,14 +6,8 @@ def main(page: ft.Page):
     page.title= "Aplicación flet"
 
     def cambiar_color(e):
-        t.color="green"
-        t.size=30
-
-        for i in range (0,10):
-            text= ft.Text(value=f"Texto numero: {i}", size=30)
-            page.add(text)
-
-        page.update()
+       t.value= textField_Nombre.value
+       page.update()
 
     #Componente texto
 
@@ -28,4 +22,9 @@ def main(page: ft.Page):
 
     bt=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=cambiar_color)
     page.add(bt)
+
+    textField_Nombre= ft.TextField(label="Nombre",hint_text="Escribe tu nombre")
+    textField_Nombre.focus
+    page.add(textField_Nombre)
+
 ft.app(target=main)
