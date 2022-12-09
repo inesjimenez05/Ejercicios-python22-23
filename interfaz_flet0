@@ -23,8 +23,23 @@ def main(page: ft.Page):
     bt=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=cambiar_color)
     page.add(bt)
 
+    drop_Down_Menu= ft.Dropdown(width=300, options=[ft.dropdown.Option("Opcion")])
+    #page.add(drop_Down_Menu)
+    drop_Down_Menu.options.append(ft.dropdown.Option("Nueva"))
+    drop_Down_Menu.options.append(ft.dropdown.Option("Opcion2"))
+    page.update()
+    
+
+    slider_edad=ft.Slider(min=0,divisions=120,max=120,label="Edad: {value}")
+    page.add(slider_edad)
+
     textField_Nombre= ft.TextField(label="Nombre",hint_text="Escribe tu nombre")
     textField_Nombre.focus
-    page.add(textField_Nombre)
+    #page.add(textField_Nombre)
+
+     #Crear una fila:
+
+    fila=ft.Row(controls=[textField_Nombre,drop_Down_Menu])
+    page.add(fila)
 
 ft.app(target=main)
