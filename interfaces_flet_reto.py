@@ -1,24 +1,40 @@
 import flet as ft
 
+cesta=[]
+
 #Aplicacion que sirva para hecer la lista de la compra
 
 def main (page: ft.Page):
     page.title= "FRUTERIA"
 
-    def cambiar_color (e):
-        t.value= textField_Nombre.value
+
+    def añadir(e):
+        cesta.append(drop_Down_Menu.value)
+        tex2.value=" "
+        for i in cesta:
+            tex2.value+=i + "\n"
+        print (cesta)
         page.update()
+    
     
     t= ft.Text(value="Fruteria", color="blue", size=40)
     page.add(t) 
+
 
     t.value="FRUTERIA"
     page.update()
 
     #Boton:
 
-    bt=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=cambiar_color)
-    page.add(bt)
+    page.add(ft.FilledButton("Añadir a la cesta", icon="add", on_click=añadir))
+
+    tex=ft.Text(value="Añadir a la cesta", size=35)
+    page.add(tex)
+
+    tex2=ft.Text(value="", size=35)
+    page.add(tex2)
+
+
 
     #Menu:
 
