@@ -10,7 +10,7 @@ def main (page: ft.Page):
 
     def añadir(e):
         cesta.append(drop_Down_Menu.value)
-        tex2.value=" "
+        tex2.value=""
         for i in cesta:
             tex2.value+=i + "\n"
         print (cesta)
@@ -26,15 +26,10 @@ def main (page: ft.Page):
 
     #Boton:
 
-    page.add(ft.FilledButton("Añadir a la cesta", icon="add", on_click=añadir))
+    page.add(ft.ElevatedButton("Añadir a la cesta", icon="add", on_click=añadir))
 
     tex=ft.Text(value="Añadir a la cesta", size=35)
     page.add(tex)
-
-    tex2=ft.Text(value="", size=35)
-    page.add(tex2)
-
-
 
     #Menu:
 
@@ -50,5 +45,8 @@ def main (page: ft.Page):
 
     fila=ft.Row(controls=[textField_Nombre,drop_Down_Menu])
     page.add(fila)
+
+    tex2=ft.Text(value="", size=23)
+    page.add(tex2)
 
 ft.app(target=main)
