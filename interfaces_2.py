@@ -24,7 +24,7 @@ def guardar_datos():
         messagebox.showinfo("Usuario guardado", f"Usuario {usuario} guardado")
 
     else:
-        print("Las contraseñas no coinciden")
+        messagebox.showerror("Las contraseñas no coinciden", f"usuario {usuario} no guardado")
     
     print(vUsuario)
 

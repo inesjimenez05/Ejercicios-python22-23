@@ -22,10 +22,12 @@ frm = ttk.Frame(ventana, padding=10).pack()
 
 
 #Componentes label y button
+
 textoLabel=StringVar()
 textoLabel.set("Hola Tkinter")
 LabelTexto= ttk.Label(frm, textvariable=textoLabel)
-LabelTexto.config(background="Light green", border=5, font=("Arial",15))
+LabelTexto= ttk.Label(frm, text="Hola Tkinter!", background="Light green", border=5, font=("Arial",15))
+
 LabelTexto.pack()
 
 
