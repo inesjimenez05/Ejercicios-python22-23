@@ -18,6 +18,7 @@ def main (page: ft.Page):
             cesta.append(pescado.label)
         if carne.value==True:
             cesta.append(carne.label)
+            
         #Mostrar mesnaje de /articulo añadido en cesta/
         page.snack_bar = ft.SnackBar(ft.Text("Añadido"))
         page.snack_bar.open = True
@@ -64,7 +65,7 @@ def main (page: ft.Page):
     verdura = ft.Checkbox(label="Verdura", value=False)
     pescado = ft.Checkbox(label="Pescado", value=False)
     carne = ft.Checkbox(label="Carne", value=False)
-    botonCesta = ft.ElevatedButton("Añadir a la cesta",on_click=añadirCesta)
+    botonCesta = ft.ElevatedButton("Añadir a la cesta",on_click=añadirCesta,icon=ft.icons.ADD_SHOPPING_CART_ROUNDED)
     botonGuardar=ft.ElevatedButton("Guardar",icon="add",on_click=guardar)
     botonBorrar=ft.ElevatedButton("Borrar",icon="delete", on_click=borrar)
 
@@ -92,4 +93,4 @@ def main (page: ft.Page):
     #Añadir a página principal
     page.add(t,textField_Nombre,fila,fruta, verdura, pescado, carne)
     
-ft.app(target=main)
+ft.app(target=main, view="web_browser")
