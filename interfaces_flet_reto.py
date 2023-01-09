@@ -87,10 +87,27 @@ def main (page: ft.Page):
         actions=[
             ft.TextButton("Cerrar", on_click=close_dlg)])
 
+    #Avatar
+    avatar = ft.Stack(
+        [
+            ft.CircleAvatar(
+                foreground_image_url="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fruit-logo-design-template-80e6d069757f94e82d8f8003edd6238b_screen.jpg?ts=1614334276"
+                
+            ),
+            ft.Container(
+                content=ft.CircleAvatar(bgcolor=ft.colors.GREEN, radius=5),
+                alignment=ft.alignment.bottom_left,
+            ),
+        ],
+        width=40,
+        height=40,
+    )
+
     #Fila botones añadir a cesta & guardar
     fila=ft.Row(controls=[botonCesta,botonGuardar,botonBorrar])
+    fila2=ft.Row(controls=[avatar,t])
 
     #Añadir a página principal
-    page.add(t,textField_Nombre,fila,fruta, verdura, pescado, carne)
+    page.add(fila2,textField_Nombre,fila,fruta, verdura, pescado, carne)
     
 ft.app(target=main, view="web_browser")
