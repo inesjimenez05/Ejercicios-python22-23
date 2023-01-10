@@ -5,19 +5,27 @@ import flet as ft
 
 cesta=[]
 
+
 def main (page: ft.Page):
     page.title= "FRUTERIA"
 
-    def añadirCesta (e):
+    def añadirCesta (src2):
         #Guardar en la lista /cesta/
         if fruta.value==True:
             cesta.append(fruta.label)
+            src2=f"/imagenes/fruta.png"
         if verdura.value==True:
             cesta.append(verdura.label)
+            src2=f"/imagenes/verdura.png"
         if pescado.value==True:
             cesta.append(pescado.label)
+            src2=f"/imagenes/logo.png"
         if carne.value==True:
             cesta.append(carne.label)
+            src2=f"/imagenes/logo.png"
+
+        #Funcion imagenes
+    def imagenes ():
             
         #Mostrar mesnaje de /articulo añadido en cesta/
         page.snack_bar = ft.SnackBar(ft.Text("Añadido"))
@@ -103,11 +111,27 @@ def main (page: ft.Page):
         height=40,
     )
 
+    #Imagenes
+
+    img = ft.Image(
+        src=f"/imagenes/logo.png",
+        width=100,
+        height=100,
+    )
+
+    imagen2= ft.Image(
+        src2="",
+        width=100,
+        height=100,
+    )
+
+
     #Fila botones añadir a cesta & guardar
     fila=ft.Row(controls=[botonCesta,botonGuardar,botonBorrar])
     fila2=ft.Row(controls=[avatar,t])
 
     #Añadir a página principal
-    page.add(fila2,textField_Nombre,fila,fruta, verdura, pescado, carne)
+    page.add(fila2,textField_Nombre,fila,fruta, verdura, pescado, carne,img,imagen2)
     
-ft.app(target=main, view="web_browser")
+ft.app(target=main, assets_dir="imagenes"
+)
